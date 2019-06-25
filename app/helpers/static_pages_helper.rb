@@ -24,7 +24,7 @@ module StaticPagesHelper
     arg_array_save = []
     arg_array_save = ARGV.shift(4)
     opts = Optimist::options do
-      opt :Srch, 'Search term', :type => String, :default => "billiards"
+      opt :Srch, 'Search term', :type => String, :default => "Bustamante pool"
       opt :max_results, 'Max results', :type => :int, :default => 5
       opt :order, 'order', :type => String, :default => 'date'
       opt :regionCode, 'region', :type => String, :default => 'JP'
@@ -49,8 +49,7 @@ module StaticPagesHelper
       )
       videos = search_response.data.items#Jsonの中身が多かったので必要な情報のみ受けれるようにしています。
       for video_index in 0..videos.length - 1 do
-          Video.create!(id: video_index,
-                        title: videos[video_index]["snippet"]["title"],
+          Video.create!(title: videos[video_index]["snippet"]["title"],
                         description: videos[video_index]["snippet"]["description"],
                         url: Settings.jump_url + videos[video_index]["id"]["videoId"],
                         thumbnail_img: videos[video_index]["snippet"]["thumbnails"]["default"]["url"])
