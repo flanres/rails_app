@@ -7,6 +7,8 @@ Youtube APIを使用し最新ビリヤード動画情報を
 ## 開発環境
 - Ruby 2.4.1
 - rails 5.2.3
+- google-api-client 0.8.6
+- optimist 3.0.0
 
 - RDBMS
   - Production
