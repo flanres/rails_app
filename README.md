@@ -7,13 +7,15 @@ Youtube APIを使用し最新ビリヤード動画情報を
 ## 開発環境
 - Ruby 2.4.1
 - rails 5.2.3
-RDBMS
-Production
-- postgresql 11.4
-development
-- sqlite3 1.3.13
-Web Server
-- puma 3.12.1
+
+- RDBMS
+  - Production
+    - postgresql 11.4
+  - development
+    - sqlite3 1.3.13
+
+- Web Server
+  - puma 3.12.1
 
 
 ## 機能
