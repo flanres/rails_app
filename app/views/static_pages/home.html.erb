@@ -8,15 +8,18 @@
   <%= link_to "Create Account", signup_path, class: "btn btn-black" %>
 </div>
 
-<h3>New Videos</h3>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= @videos.each do |video| %>
-      <li>
-        <%= image_tag(video.thumbnail_img) %>
-        <%= link_to video.title, video.url %>
-        <%#= video.description %>
-      </li>
-    <% end %>
+  <h3>New Videos</h3>
+    <ul>
+      <%#= @videos.each do |video| %>
+      <%= for video_index in 0..@videos.length - 1 do %>
+        <li>
+          <%= image_tag(@videos[video_index].thumbnail_img) %>
+          <%= link_to @videos[video_index].title, @videos[video_index].url %>
+          <%= @videos[video_index].description %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>

@@ -47,12 +47,18 @@ module StaticPagesHelper
           :regionCode => opts[:regionCode]
         }
       )
-      videos = search_response.data.items#Jsonの中身が多かったので必要な情報のみ受けれるようにしています。
-      for video_index in 0..videos.length - 1 do
-          Video.create!(title: videos[video_index]["snippet"]["title"],
-                        description: videos[video_index]["snippet"]["description"],
-                        url: Settings.jump_url + videos[video_index]["id"]["videoId"],
-                        thumbnail_img: videos[video_index]["snippet"]["thumbnails"]["default"]["url"])
+      videos = search_response.data.items
+#      for video_index in 0..videos.length - 1 do
+#          Video.create!(title: videos[video_index]["snippet"]["title"],
+#                        description: videos[video_index]["snippet"]["description"],
+#                        url: Settings.jump_url + videos[video_index]["id"]["videoId"],
+#                        thumbnail_img: videos[video_index]["snippet"]["thumbnails"]["default"]["url"])
+#      end
+      videos.each_with_index do |input_db_val| 
+          Video.create!(title: input_db_val["snippet"]["title"],
+                        description: input_db_val["snippet"]["description"],
+                        url: Settings.jump_url + input_db_val["id"]["videoId"],
+                        thumbnail_img: input_db_val["snippet"]["thumbnails"]["default"]["url"])
       end
     rescue Google::APIClient::TransmissionError => e
       puts e.result.body
