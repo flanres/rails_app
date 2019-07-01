@@ -12,12 +12,13 @@
   <div class="col-md-6 col-md-offset-3">
   <h3>New Videos</h3>
     <ul>
-      <%#= @videos.each do |video| %>
-      <%= for video_index in 0..@videos.length - 1 do %>
+      <% @videos.each do |video| %>
         <li>
-          <%= image_tag(@videos[video_index].thumbnail_img) %>
-          <%= link_to @videos[video_index].title, @videos[video_index].url %>
-          <%= @videos[video_index].description %>
+          <%= image_tag(video.thumbnail_img) %>
+          <%= link_to video.title, video.url %>
+          <p>
+          <%= video.description %>
+          </p>
         </li>
       <% end %>
     </ul>
