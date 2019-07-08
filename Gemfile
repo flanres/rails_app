@@ -35,6 +35,8 @@ gem 'google-api-client',       '<0.9'
 gem 'config'
 #gem 'trollop'
 gem 'optimist',                '~> 3.0'
+# test gem
+gem 'rspec-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
