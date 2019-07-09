@@ -35,8 +35,6 @@ gem 'google-api-client',       '<0.9'
 gem 'config'
 #gem 'trollop'
 gem 'optimist',                '~> 3.0'
-# test gem
-gem 'rspec-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -55,11 +53,15 @@ group :development, :test do
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # test gem
+  gem 'rspec-rails'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  # rspec connection gem = windows is false
+  #  gem 'spring-commands-rspec'
 end
 
 group :test do
