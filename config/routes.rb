@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get    '/recommend',  to: 'static_pages#recommend'
   get    '/signup',     to: 'users#new'
   get    '/search',     to: 'users#show'
+  get    '/users/search',     to: 'users#search'
   get    '/login',      to: 'sessions#new'
   post   '/login',      to: 'sessions#create'
   delete '/logout',     to: 'sessions#destroy'

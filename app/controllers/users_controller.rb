@@ -7,9 +7,14 @@ class UsersController < ApplicationController
     @users = User.page(params[:page])
   end
 
+  def search
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
+    render json: @users
+  end
+
   def show
-    if params[:search].present?
-      @user = User.find_by(name: params[:search])
+    if params[:name].present?
+      @user = User.find_by(name: params[:name])
       if @user.blank?
         flash[:danger] = "Could not find the name."
         redirect_to users_path
