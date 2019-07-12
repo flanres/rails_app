@@ -1,8 +1,8 @@
 $(document).on('turbolinks:load', function(){
     $(document).on('keyup', '#form', function(e){
     e.preventDefault();
-    var input = $.trim($(this).val());
-    byebug
+//    var input = $.trim($(this).val());
+    var input = 'ko';//valに値が入っていないため暫定対処
     $.ajax({
       url: '/users/search',
       type: 'GET',
