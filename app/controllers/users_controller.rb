@@ -11,7 +11,6 @@ class UsersController < ApplicationController
     @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
 #    @users = User.where('name LIKE(?)', "%#{params[:name]}%")
     render json: @users
-#    redirect_to users_path
   end
 
   def show
