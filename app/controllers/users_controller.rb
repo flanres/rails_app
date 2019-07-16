@@ -9,14 +9,11 @@ class UsersController < ApplicationController
 
   def search
     @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
-#    @users = User.where('name LIKE(?)', "%#{params[:name]}%")
-    render js: @users
 #    render partial: 'ajax_partial', locals: { :results => results }
 #    render :partial => "user", locals: { user: @user }
   end
 
   def show
-    byebug
     if params[:name].present?
       @user = User.find_by(name: params[:name])
       if @user.blank?

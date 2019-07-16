@@ -10,15 +10,16 @@ $(document).on('turbolinks:load', function(){
       contentType: false,
       dataType: 'json'
     })
-    .done(function(data){ 
-      $('#result').find('li').remove(); 
-      $('#page').find('li').remove(); 
-      $(data).each(function(i, user){ 
-//        $('#result').append('<%= gravatar_for user, size: 50 %>') 
-//        $('#result').append('<%= render @users %>')
-//        $("#result").html("<%= escape_javascript(render partial: 'users/_user.html.erb') %>")
-//        $("#result").html("<%= escape_javascript(render partial: 'users/_user.html.erb' @users) %>")
-      });
-    })
+//    .done(function(data){ 
+//      console.log(data)
+//      $('#page').find('li').remove(); 
+//      $(data).each(function(i, user){ 
+//        $('#page').append('<%= gravatar_for user, size: 50 %>') 
+//        $('#page').html('<%= render :partial => "user" %>')
+//        $("#page").html("<%= j(render partial: "user", :collection => @users ) %>");
+//        $("#page").html("<%= j(render partial: "user", :collection => @users ) %>");
+//        $("#page").html("<%= escape_javascript(render partial: 'users/_user.html.erb' @users) %>")
+//      });
+//    })
   });
 });

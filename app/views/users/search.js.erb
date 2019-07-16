@@ -1,3 +1,1 @@
-console.log(<%=@users%>);
-$('#<%=page%>').find('<%li%>').remove();
-$("<%= escape_javascript(render partial: 'user', :collections => @users) %>").appendTo("#<%result%>");
+$("#page").html("<%= escape_javascript(render partial: 'user', collection: @users) %>");
