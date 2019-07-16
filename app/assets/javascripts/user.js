@@ -1,7 +1,6 @@
 $(document).on('turbolinks:load', function(){
     $(document).on('keyup', '#input_name', function(e){
     e.preventDefault();
-    console.log(this);
     var input = $.trim($(this).val());
     $.ajax({
       url: '/users/search',
@@ -13,8 +12,12 @@ $(document).on('turbolinks:load', function(){
     })
     .done(function(data){ 
       $('#result').find('li').remove(); 
+      $('#page').find('li').remove(); 
       $(data).each(function(i, user){ 
-        $('#result').append('<li class="users">' + user.name + '</li>') 
+//        $('#result').append('<%= gravatar_for user, size: 50 %>') 
+//        $('#result').append('<%= render @users %>')
+//        $("#result").html("<%= escape_javascript(render partial: 'users/_user.html.erb') %>")
+//        $("#result").html("<%= escape_javascript(render partial: 'users/_user.html.erb' @users) %>")
       });
     })
   });
