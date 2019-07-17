@@ -8,7 +8,7 @@
   <div class="col-md-6">
   <h3>New Videos</h3>
     <ul class="users">
-      <% @videos.each do |video| %>
+      <% @videos.first(Settings.lines_per_page).each do |video| %>
         <li>
           <%= image_tag(video.thumbnail_img) %>
           <%= link_to video.title, video.url %>
@@ -20,9 +20,9 @@
     </ul>
   </div>
   <div class="col-md-6">
-  <h3>current events Videos</h3>
+  <h3>Current Events Videos</h3>
     <ul class="users">
-      <% @videos.each do |video| %>
+      <% @videos.last(Settings.lines_per_page).each do |video| %>
         <li>
           <%= image_tag(video.thumbnail_img) %>
           <%= link_to video.title, video.url %>

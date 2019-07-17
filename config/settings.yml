@@ -9,3 +9,6 @@ api_ver: "v3"
 authori: "nil"
 app_ver: "1.0.0"
 jump_url: "https://www.youtube.com/watch?v="
+
+# lines per page
+lines_per_page: 5
