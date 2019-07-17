@@ -11,6 +11,12 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
+/* jumbotron */
+ 	
+ .jumbotron { background:url(pool_back.jpg) center no-repeat;
+              color: #eaeaea;
+              background-size: cover;}
+
 /* universal */
 
 body {
