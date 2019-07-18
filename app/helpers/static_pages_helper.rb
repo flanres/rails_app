@@ -49,11 +49,14 @@ module StaticPagesHelper
         }
       )
       videos = search_response.data.items
-      videos.each_with_index do |input_db_val| 
+      videos.each_with_index do |input_db_val|
+        # DB内に取得動画情報のURLと同じURLが存在しない時にDB登録を行う
+        if Video.find_by(url: Settings.jump_url.to_s + input_db_val["id"]["videoId"].to_s).blank?
           Video.create!(title: input_db_val["snippet"]["title"],
                         description: input_db_val["snippet"]["description"],
                         url: Settings.jump_url.to_s + input_db_val["id"]["videoId"].to_s,
                         thumbnail_img: input_db_val["snippet"]["thumbnails"]["default"]["url"])
+        end
       end
     rescue Google::APIClient::TransmissionError => e
       puts e.result.body
