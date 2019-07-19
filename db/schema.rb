@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 2019_07_19_043507) do
     t.integer "video_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", nil], name: "index_likes_on_user_id_and_micropost_id", unique: true
+    t.index ["user_id", "video_id"], name: "index_likes_on_user_id_and_video_id", unique: true
     t.index ["user_id"], name: "index_likes_on_user_id"
-    t.index [nil], name: "index_likes_on_micropost_id"
+    t.index ["video_id"], name: "index_likes_on_video_id"
   end
 
   create_table "users", force: :cascade do |t|

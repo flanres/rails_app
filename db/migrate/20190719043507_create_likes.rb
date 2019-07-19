@@ -7,8 +7,8 @@ class CreateLikes < ActiveRecord::Migration[5.2]
       t.timestamps
 
       t.index :user_id
-      t.index :micropost_id
-      t.index [:user_id, :micropost_id], unique: true
+      t.index :video_id
+      t.index [:user_id, :video_id], unique: true
     end
   end
 end
