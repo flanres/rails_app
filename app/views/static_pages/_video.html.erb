@@ -1,0 +1,23 @@
+<ul class="users">
+  <% if position == ("new") %>
+    <% @videos.first(Settings.lines_per_page).each do |video| %>
+    <li>
+      <%= image_tag(video.thumbnail_img) %>
+      <%= link_to video.title, video.url %>
+      <%= video.description %>
+      <%= render "likes/like", video: video %>
+      </p>
+    </li>
+    <% end %>
+  <% else %>
+    <% @videos.last(Settings.lines_per_page).each do |video| %>
+    <li>
+      <%= image_tag(video.thumbnail_img) %>
+      <%= link_to video.title, video.url %>
+      <%= video.description %>
+      <%= render "likes/like", video: video %>
+      </p>
+    </li>
+    <% end %>
+  <% end %>
+</ul>

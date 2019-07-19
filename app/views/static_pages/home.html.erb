@@ -7,7 +7,8 @@
 <div class="row">
   <div class="col-md-6">
   <h3>New Videos</h3>
-    <ul class="users">
+  <%= render partial: "video.html.erb", locals: { position: "new" } %>
+<!--    <ul class="users">
       <% @videos.first(Settings.lines_per_page).each do |video| %>
         <li>
           <%= image_tag(video.thumbnail_img) %>
@@ -17,11 +18,12 @@
           </p>
         </li>
       <% end %>
-    </ul>
+    </ul>-->
   </div>
   <div class="col-md-6">
   <h3>Current Events Videos</h3>
-    <ul class="users">
+  <%= render partial: "video.html.erb", locals: { position: "current" } %>
+<!--    <ul class="users">
       <% @videos.last(Settings.lines_per_page).each do |video| %>
         <li>
           <%= image_tag(video.thumbnail_img) %>
@@ -31,7 +33,7 @@
           </p>
         </li>
       <% end %>
-    </ul>
+    </ul>-->
   </div>
 
 </div>
