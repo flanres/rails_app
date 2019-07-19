@@ -352,7 +352,7 @@ DEPENDENCIES
   jquery-rails (= 4.3.1)
   kaminari
   kaminari-bootstrap
-  mini_magick (= 4.7.0)
+  mini_magick
   minitest (= 5.10.3)
   minitest-reporters (= 1.1.14)
   optimist (~> 3.0)
