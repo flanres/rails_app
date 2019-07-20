@@ -26,7 +26,7 @@ module StaticPagesHelper
     opts = Optimist::options do
       opt :Srch, 'Search term', :type => String, :default => keyword
       opt :max_results, 'Max results', :type => :int, :default => Settings.lines_per_page
-      opt :order, 'order', :type => String, :default => 'date'
+      opt :order, 'order', :type => String, :default => 'relevance'
       opt :regionCode, 'region', :type => String, :default => 'JP'
     end
 

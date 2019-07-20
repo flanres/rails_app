@@ -1,6 +1,9 @@
 <ul class="users">
   <% if position == ("new") %>
-    <% @videos.first(Settings.lines_per_page).each do |video| %>
+    <% @videos.last((Settings.lines_per_page)*2).each_with_index do |video, index| %>
+    <% if index == Settings.lines_per_page %>
+      <% break %>
+    <% end %>
     <li>
       <%= image_tag(video.thumbnail_img) %>
       <%= link_to video.title, video.url %>
@@ -10,7 +13,7 @@
     </li>
     <% end %>
   <% else %>
-    <% @videos.last(Settings.lines_per_page).each do |video| %>
+    <% @videos.last(Settings.lines_per_page).reverse_each do |video| %>
     <li>
       <%= image_tag(video.thumbnail_img) %>
       <%= link_to video.title, video.url %>
