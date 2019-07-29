@@ -23,11 +23,22 @@ module StaticPagesHelper
   def get_data(keyword)
     arg_array_save = []
     arg_array_save = ARGV.shift(4)
-    opts = Optimist::options do
-      opt :Srch, 'Search term', :type => String, :default => keyword
-      opt :max_results, 'Max results', :type => :int, :default => Settings.lines_per_page
-      opt :order, 'order', :type => String, :default => 'relevance'
-      opt :regionCode, 'region', :type => String, :default => 'JP'
+
+    if keyword == "recent"
+      opts = Optimist::options do
+        opt :Srch, 'Search term', :type => String, :default => keyword
+        opt :max_results, 'Max results', :type => :int, :default => Settings.lines_per_page
+        opt :order, 'order', :type => String, :default => 'date'
+        opt :regionCode, 'region', :type => String, :default => 'JP'
+      end
+    
+    else
+      opts = Optimist::options do
+        opt :Srch, 'Search term', :type => String, :default => keyword
+        opt :max_results, 'Max results', :type => :int, :default => Settings.lines_per_page
+        opt :order, 'order', :type => String, :default => 'date'
+        opt :regionCode, 'region', :type => String, :default => 'JP'
+      end
     end
 
     arg_array_save.each do |arg_push|
