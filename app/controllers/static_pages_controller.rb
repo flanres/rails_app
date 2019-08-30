@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
       @videos = Video.new
     end
     get_data("【PooL Live】 VS")
-    get_data("World Cup Of Pool 2019")
+    get_data("Bustamante")
     @videos = Video.all
   end
 
