@@ -3,6 +3,8 @@
 Youtube APIを使用し最新ビリヤード動画情報を
 取得し一覧表示する。
 下記に実装済み機能を〇、未実装機能を△に記す
+
+# heroku
 https://obscure-sands-63579.herokuapp.com/
 
 ## 開発環境
