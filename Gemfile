@@ -29,7 +29,7 @@ gem 'carrierwave',             '1.2.2'
 gem 'mini_magick'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
-gem 'bootstrap-sass',          '3.3.7'
+gem 'bootstrap-sass',          '3.4.1'
 # google API
 gem 'google-api-client',       '<0.9'
 gem 'config'
