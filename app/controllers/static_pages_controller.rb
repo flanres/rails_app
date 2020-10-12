@@ -4,8 +4,8 @@ class StaticPagesController < ApplicationController
     if Video.blank?
       @videos = Video.new
     end
-    get_data("【PooL Live】 VS")
-    get_data("Bustamante")
+    get_data("Francisco Bustamante")
+    get_data("Mosconi Cup")
     @videos = Video.all
   end
 
